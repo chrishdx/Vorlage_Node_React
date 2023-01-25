@@ -1,4 +1,5 @@
-FROM node:18.13.0
+FROM node:18.13.0 
+# 18.13.0 enstpricht 108
 ENV TZ="Europe/Berlin"
 RUN date
 RUN apt update
