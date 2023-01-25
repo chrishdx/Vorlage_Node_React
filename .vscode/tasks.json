@@ -1,0 +1,102 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Frontend",
+			"type": "npm",
+			"script": "start",
+			"group": "build",
+			"path": "/frontend",
+			"presentation": {
+				"group": "cmake-complile"
+			},
+			"problemMatcher": []
+		},
+
+		{
+			"label": "Backend",
+			"type": "shell",
+			"presentation": {
+				"group": "cmake-complile"
+			},
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": [
+					{
+						"regexp": ".",
+						"file": 1,
+						"location": 2,
+						"message": 3
+					}
+				],
+				"background": {
+					"beginsPattern": ".",
+					"endsPattern": "."
+				}
+			},
+			"command": "node index.js",
+			"options": {
+				"cwd": "${workspaceFolder}/backend"
+			}
+		},
+		{
+			"label": "Server",
+			"dependsOn": [
+				"Backend",
+				"Frontend"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": [
+					{
+						"regexp": ".",
+						"file": 1,
+						"location": 2,
+						"message": 3
+					}
+				],
+				"background": {
+					"beginsPattern": ".",
+					"endsPattern": "."
+				}
+			}
+		},
+		{
+			"label": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"React Build",
+				"Docker Build",
+			],
+			"presentation": {
+				"reveal": "silent",
+				"close": true
+			},
+
+		
+		},
+		{
+			"label": "React Build",
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"path": "/frontend",
+		},
+		{
+			"type": "docker-build",
+			"label": "Docker Build",
+			"platform": "node",
+			"dockerBuild": {
+				"dockerfile": "${workspaceFolder}/Dockerfile",
+				"context": "${workspaceFolder}",
+				"tag": "my.image",
+			},
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
