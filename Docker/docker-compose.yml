@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  ####:
+
+    image: ####
+    container_name: nginx
+    restart: unless-stopped
+    networks:
+      - Backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.###.rule=Host(`###`)"
+      - "traefik.http.routers.###.entrypoints=websecure"
+      - "traefik.http.services.###.loadbalancer.server.port=80"
+      - "traefik.http.routers.###.service=###"
+      - "traefik.http.routers.###.tls.certresolver=acme"
+networks:
+  Backend:
+    external: true
