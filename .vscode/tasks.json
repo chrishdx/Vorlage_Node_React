@@ -1,6 +1,21 @@
 {
 	"version": "2.0.0",
-	"tasks": [
+	"tasks": [  {
+		"label": "Terminate All Tasks",
+		"command": "echo ${input:terminate}",
+		"type": "shell",
+		"problemMatcher": []
+	  },
+	
+	
+		{
+   "label": "postdebugKill",
+   "type": "process",
+   "command":[
+      "${command:workbench.action.tasks.terminate}",
+      "${command:workbench.action.acceptSelectedQuickOpenItem}",
+   ],
+},
 		{
 			
 			"label": "Frontend",
@@ -105,5 +120,13 @@
 				"isDefault": true
 			}
 		}
-	]
+	],
+	"inputs": [
+		{
+		  "id": "terminate",
+		  "type": "command",
+		  "command": "workbench.action.tasks.terminate",
+		  "args": "terminateAll"
+		}
+	  ]
 }
