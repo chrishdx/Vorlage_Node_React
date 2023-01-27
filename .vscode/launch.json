@@ -21,7 +21,8 @@
             "request": "launch",
             "url": "http://localhost:3000",      // create-react-app's default port 3000
             "webRoot": "${workspaceRoot}/frontend/src",
-            "preLaunchTask": "Server"        // Add prelaunch Task npm: start (defined in tasks.json)
+            "preLaunchTask": "Server" ,       // Add prelaunch Task npm: start (defined in tasks.json)
+            "postDebugTask": "Terminate All Tasks"
             
         },
         {
