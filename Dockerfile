@@ -6,7 +6,7 @@ RUN apt update
 RUN apt install curl gnupg2 ca-certificates lsb-release sudo -y
 RUN apt install -y nginx
 COPY ./backend /app
-COPY ./NginxProxy/default.conf /etc/nginx/sites-available/default
+COPY ./Docker/NginxProxy/default.conf /etc/nginx/sites-available/default
 COPY start.sh /start.sh
 COPY ./frontend/build /var/www/html
 WORKDIR /app
