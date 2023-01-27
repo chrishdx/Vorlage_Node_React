@@ -12,8 +12,6 @@ COPY ./frontend/build /var/www/html
 WORKDIR /app
 RUN npm install
 RUN echo "Port=507" >> .env
-RUN echo "JWT_SECRET=secret" >> .env
-RUN echo "Cookie_Secret=produktionn" >> .env
 RUN echo "NODE_ENV=production" >> .env
 
 
