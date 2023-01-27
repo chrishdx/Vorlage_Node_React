@@ -2,42 +2,64 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			
 			"label": "Frontend",
 			"type": "npm",
+			"presentation": {
+				"group": "React"
+			},
 			"script": "start",
 			"group": "build",
+			"isBackground": true,
 			"path": "/frontend",
-			"presentation": {
-				"group": "cmake-complile"
-			},
-			"problemMatcher": []
+			"problemMatcher": [
+				{
+				  "pattern": [
+					{
+					  "regexp": ".",
+					  "file": 1,
+					  "location": 2,
+					  "message": 3
+					}
+				  ],
+				  "background": {
+					"activeOnStart": true,
+					"beginsPattern": ".",
+					"endsPattern": "webpack compiled successfully",
+				  }
+				}
+			  ],
 		},
 
-		{
+		{			
 			"label": "Backend",
 			"type": "shell",
-			"presentation": {
-				"group": "cmake-complile"
-			},
 			"isBackground": true,
-			"problemMatcher": {
-				"pattern": [
-					{
-						"regexp": ".",
-						"file": 1,
-						"location": 2,
-						"message": 3
-					}
-				],
-				"background": {
-					"beginsPattern": ".",
-					"endsPattern": "."
-				}
-			},
+			
 			"command": "node index.js",
 			"options": {
 				"cwd": "${workspaceFolder}/backend"
-			}
+			},
+			"presentation": {
+				"group": "React"
+			},
+				"problemMatcher": [
+					{
+					  "pattern": [
+						{
+						  "regexp": ".",
+						  "file": 1,
+						  "location": 2,
+						  "message": 3
+						}
+					  ],
+					  "background": {
+						"activeOnStart": true,
+						"beginsPattern": ".",
+						"endsPattern": ".",
+					  }
+					}
+				  ]
 		},
 		{
 			"label": "Server",
@@ -45,22 +67,7 @@
 				"Backend",
 				"Frontend"
 			],
-			"group": "build",
-			"isBackground": true,
-			"problemMatcher": {
-				"pattern": [
-					{
-						"regexp": ".",
-						"file": 1,
-						"location": 2,
-						"message": 3
-					}
-				],
-				"background": {
-					"beginsPattern": ".",
-					"endsPattern": "."
-				}
-			}
+			"group": "build"
 		},
 		{
 			"label": "build",
