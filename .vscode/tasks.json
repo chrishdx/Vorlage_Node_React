@@ -6,16 +6,6 @@
 		"type": "shell",
 		"problemMatcher": []
 	  },
-	
-	
-		{
-   "label": "postdebugKill",
-   "type": "process",
-   "command":[
-      "${command:workbench.action.tasks.terminate}",
-      "${command:workbench.action.acceptSelectedQuickOpenItem}",
-   ],
-},
 		{
 			
 			"label": "Frontend",
@@ -109,12 +99,12 @@
 			"type": "docker-build",
 			"label": "Docker Build",
 			"platform": "node",
+
 			"dockerBuild": {
 				"dockerfile": "${workspaceFolder}/Dockerfile",
 				"context": "${workspaceFolder}",
-				"tag": "my.image",
+				"tag": "${input:DockerTag}",
 			},
-			"problemMatcher": [],
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -127,6 +117,11 @@
 		  "type": "command",
 		  "command": "workbench.action.tasks.terminate",
 		  "args": "terminateAll"
-		}
+		},
+		{
+			"id": "DockerTag",
+			"type": "promptString",
+			"description": "Bitte den Docker Tag  angeben",
+		  }
 	  ]
 }
