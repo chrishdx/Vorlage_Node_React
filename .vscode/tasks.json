@@ -35,6 +35,31 @@
 				}
 			  ],
 		},
+		{
+			
+			"label": "ReactBrowser",
+			"type": "npm",
+			"script": "start:browser",
+			"isBackground": true,
+			"path": "/frontend",
+			"problemMatcher": [
+				{
+				  "pattern": [
+					{
+					  "regexp": ".",
+					  "file": 1,
+					  "location": 2,
+					  "message": 3
+					}
+				  ],
+				  "background": {
+					"activeOnStart": true,
+					"beginsPattern": ".",
+					"endsPattern": ".",
+				  }
+				}
+			  ],
+		},
 
 		{			
 			"label": "Backend",
