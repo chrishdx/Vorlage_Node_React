@@ -3,7 +3,7 @@ services:
   ####:
 
     image: ####
-    container_name: nginx
+    container_name: ## 
     restart: unless-stopped
     networks:
       - Backend
