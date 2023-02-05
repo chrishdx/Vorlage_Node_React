@@ -7,5 +7,5 @@ const Port = NODE_ENV === "production" ? parseInt(process.env.Port) || 507 : 221
 
 
 app.listen(Port , () => {
-console.log(`Server läuft auf Port ${Port}`
+console.log(`Server läuft auf Port ${Port}`)
 }
