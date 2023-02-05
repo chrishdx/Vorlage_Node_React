@@ -26,6 +26,18 @@
             
         },
         {
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/backend",
+            "name": "Backend debuggen React starten",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "index.js",
+            "preLaunchTask": "ReactBrowser" ,
+            "postDebugTask": "Terminate All Tasks"
+        },
+        {
             "type": "docker",
             "name": "Docker Build",
             "platform": "node",
