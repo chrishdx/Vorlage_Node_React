@@ -36,6 +36,7 @@
   },
   "scripts": {
     "start": "BROWSER='none'  react-scripts start",
+    "start:browser": "BROWSER='google chrome' react-scripts start",
     "build": "react-scripts build",
     "build:compress": "react-scripts build && compress-cra",
     "test": "react-scripts test",
