@@ -7,6 +7,6 @@ mkdir backend
 cd backend
 npm init -y
 npm i express body-parser bcrypt better-sqlite3 dotenv express-session moment-timezone uuidv4
-cat ./Template/backend/index.js >> ./backend/index.js
+cat ./Templates/backend/index.js >> ./backend/index.js
 cd ..
 
