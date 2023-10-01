@@ -21,6 +21,12 @@ if [[ ! "$project_name" =~ ^[a-z0-9]([a-z0-9._-]{0,126}[a-z0-9])?$ ]]; then
     exit 1
 fi
 
+# Überprüfen, ob der Ordnername einen gültigen Domainnamen darstellt.
+if [[ "$project_name" =~ _ ]]; then
+    echo "Der Ordnername '$project_name' enthält einen Unterstrich, der in Domainnamen nicht zulässig ist."
+    exit 1
+fi
+
 # Frage nach der Version (1 für light oder 2 für full)
 if [ -z "$2" ]; then
     echo "Wählen Sie eine Version:"
